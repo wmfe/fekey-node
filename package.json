@@ -1,6 +1,6 @@
 {
   "name": "fekey-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Support node end in fekey",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wmfe/fekey-node.git"
+  },
+  "dependencies": {
+    "fekey-parser-swig" : "1.0.1",
+    "yogurt-postprocessor-require-async" : "",
+    "fis3-preprocessor-extlang" : ""
   },
   "keywords": [
     "fekey",
