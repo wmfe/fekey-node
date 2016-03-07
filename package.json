@@ -1,0 +1,23 @@
+{
+  "name": "fekey-node",
+  "version": "1.0.1",
+  "description": "Support node end in fekey",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmfe/fekey-node.git"
+  },
+  "keywords": [
+    "fekey",
+    "node"
+  ],
+  "author": "flippyxu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmfe/fekey-node/issues"
+  },
+  "homepage": "https://github.com/wmfe/fekey-node#readme"
+}
