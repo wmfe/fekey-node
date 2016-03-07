@@ -1,6 +1,6 @@
 {
   "name": "fekey-node",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Support node end in fekey",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,8 @@
   "dependencies": {
     "fekey-parser-swig" : "1.0.1",
     "yogurt-postprocessor-require-async" : "",
-    "yogurt-preprocessor-extlang" : ""
+    "yogurt-preprocessor-extlang" : "",
+    "fis3-hook-commonjs" : ""
   },
   "keywords": [
     "fekey",
