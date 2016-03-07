@@ -13,7 +13,7 @@
   "dependencies": {
     "fekey-parser-swig" : "1.0.1",
     "yogurt-postprocessor-require-async" : "",
-    "fis3-preprocessor-extlang" : ""
+    "yogurt-preprocessor-extlang" : ""
   },
   "keywords": [
     "fekey",
