@@ -50,7 +50,7 @@ module.exports = function(fis, isMount) {
         },
 
         '/client/**.js': {
-            optimizer: null//fis.plugin('uglify-js')
+            optimizer: fis.plugin('uglify-js')
         },
         '/client/(**.less)': {
             parser: fis.plugin('less'),
