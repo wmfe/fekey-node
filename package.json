@@ -1,6 +1,6 @@
 {
   "name": "fekey-node",
-  "version": "1.0.5",
+  "version": "1.0.6git ",
   "description": "Support node end in fekey",
   "main": "index.js",
   "scripts": {
@@ -14,11 +14,7 @@
     "fekey-parser-swig" : "1.0.1",
     "yogurt-postprocessor-require-async" : "",
     "yogurt-preprocessor-extlang" : "",
-    "fis3-hook-commonjs" : "",
-    "fis-parser-less" : "",
-    "fis-optimizer-clean-css" : "",
-    "fis-optimizer-png-compressor" : "",
-    "fis-optimizer-uglify-js" : ""
+    "fis3-hook-commonjs" : ""
   },
   "keywords": [
     "fekey",
