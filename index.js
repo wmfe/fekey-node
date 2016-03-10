@@ -10,6 +10,7 @@ module.exports = function(fis, isMount) {
     };
 
     fis.set('server.type', 'node');
+    fis.set('project.fileType.text', 'es6,jsx');
 
     var matchRules = {
         // all release to $static dir
@@ -32,7 +33,7 @@ module.exports = function(fis, isMount) {
             release: '/${static}/${namespace}/$1'
         },
 
-        '/client/(**.{js,css})' : {
+        '/client/(**.{js,css,es6,jsx})' : {
             release : '/static/${namespace}/$1'
         },
 
@@ -45,11 +46,11 @@ module.exports = function(fis, isMount) {
             release : false
         },
 
-        '/client/**.{js,css,less}': {
+        '/client/**.{js,css,less,es6,jsx}': {
             useHash: true
         },
 
-        '/client/**.js': {
+        '/client/**.{js,es6,jsx}': {
             optimizer: fis.plugin('uglify-js')
         },
 
@@ -83,7 +84,7 @@ module.exports = function(fis, isMount) {
 
         // widget
 
-        '/client/**.{tpl,js}': {
+        '/client/**.{tpl,js,jsx,es6}': {
             useSameNameRequire: true
         },
 
@@ -95,7 +96,7 @@ module.exports = function(fis, isMount) {
         },
 
 
-        '/client/widget/**.{js,css}': {
+        '/client/widget/**.{js,jsx,less,css,es6}': {
             isMod: true
         },
 
@@ -122,6 +123,24 @@ module.exports = function(fis, isMount) {
         '**.tmpl' : {
             parser : "swig",
             release : false
+        },
+
+        '*.{jsx,es6}' : {
+            rExt: '.js',
+            parser: fis.plugin('babel-5.x', {
+                blacklist: ['regenerator'],
+                stage: 3
+            }),
+            isMod: true,
+            useHash: true,
+            isJsLike: true
+        },
+
+        '*.{css,less}' : {
+            postprocessor: fis.plugin('autoprefixer', {
+                browsers: ['android 4', 'ios 6', 'last 1 Chrome versions', 'last 2 Safari versions'],
+                "cascade": true
+            })
         }
     };
 
