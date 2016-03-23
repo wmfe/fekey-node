@@ -11,7 +11,7 @@
     "url": "git+https://github.com/wmfe/fekey-node.git"
   },
   "dependencies": {
-    "fekey-parser-swig" : "1.0.1",
+    "fekey-parser-swig" : "",
     "yogurt-postprocessor-require-async" : "",
     "yogurt-preprocessor-extlang" : "",
     "fis3-hook-commonjs" : ""
