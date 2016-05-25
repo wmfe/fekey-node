@@ -12,6 +12,22 @@ module.exports = function(fis, isMount) {
     fis.set('server.type', 'node');
     fis.set('project.fileType.text', 'es6,jsx');
 
+    fis.set('project.ignore', [
+        '.git/**',
+        '.svn/**',
+        '**.md',
+        'fis-conf.js',
+        'fekey-conf.js',
+        'package.json',
+        'MIT-LICENSE',
+        'upload.py',
+        'issue.info',
+        'build.sh',
+        'build.dev.sh',
+        'output/**',
+        'test/**'
+    ]);
+
     var matchRules = {
         // all release to $static dir
 
@@ -27,22 +43,14 @@ module.exports = function(fis, isMount) {
             isMod: false
         },
 
-        'client/(**)': {
+        '/client/(**)': {
             id: '$1',
             moduleId: '${namespace}:$1',
             release: '/${static}/${namespace}/$1'
         },
 
-        '/client/(**.{js,css,es6,jsx})' : {
-            release : '/static/${namespace}/$1'
-        },
-
         '/client/(**.tmpl)' : {
             parser : fis.plugin('swig'),
-            release : false
-        },
-
-        '{package.json, build.sh}' : {
             release : false
         },
 
@@ -88,7 +96,6 @@ module.exports = function(fis, isMount) {
             }
         },
 
-
         '/client/widget/**.{js,jsx,less,css,es6}': {
             isMod: true
         },
@@ -109,16 +116,12 @@ module.exports = function(fis, isMount) {
             release: '/conf/fis/$0'
         },
 
-        '*.sh': {
-            release: false
-        },
-
-        '**.tmpl' : {
+        '/client/**.tmpl' : {
             parser : "swig",
             release : false
         },
 
-        '*.{jsx,es6}' : {
+        '/client/**.{jsx,es6}' : {
             rExt: '.js',
             parser: fis.plugin('babel-5.x', {
                 blacklist: ['regenerator'],
@@ -129,7 +132,7 @@ module.exports = function(fis, isMount) {
             isJsLike: true
         },
 
-        '*.{css,less}' : {
+        '/client/**.{css,less}' : {
             postprocessor: fis.plugin('autoprefixer', {
                 browsers: ['android 4', 'ios 6', 'last 1 Chrome versions', 'last 2 Safari versions'],
                 "cascade": true
