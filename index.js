@@ -123,7 +123,7 @@ module.exports = function(fis, isMount) {
 
         '/client/**.{jsx,es6}' : {
             rExt: '.js',
-            parser: fis.plugin('babel-5.x', {
+            postprocessor: fis.plugin('babel-5.x', {
                 blacklist: ['regenerator'],
                 stage: 3,
                 sourceMaps: true
